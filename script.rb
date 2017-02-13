@@ -2,7 +2,11 @@ require 'google_places'
 
 client = GooglePlaces::Client.new(ENV['TOKEN'])
 
-YAML.load(File.read('./tests.yml'))['tests'].each do |test|
+tests = YAML.load(File.read('./tests.yml'))['tests']
+
+tests = tests.first(ARGV[0].to_i) unless ARGV[0].nil?
+
+tests.each do |test|
   print "===================================\n"
   print "= #{test['name']} =\n"
   print "===================================\n"

@@ -10,5 +10,5 @@ spots](https://github.com/qpowell/google_places#retrieving-a-list-of-spots)
 ## Run
 
 ```shell
-TOKEN=GOOGLE_PLACE_TOKEN ruby script.rb
+TOKEN=GOOGLE_PLACE_TOKEN ruby script.rb [limit]
 ```

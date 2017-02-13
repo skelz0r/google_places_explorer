@@ -11,10 +11,10 @@ tests:
     latitude: 48.8698568
     longitude: 2.3561989
     options:
-      type:
+      :type:
       - 'restaurant'
-      exclude:
+      :exclude:
       - 'cafe'
-      radius: 2_000
+      :radius: 2_000
 
 
