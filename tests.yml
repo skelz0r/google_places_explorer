@@ -1,5 +1,12 @@
 ---
 tests:
+  - name: "Bar près de chatelet avec des billards"
+    kind: 'query'
+    query: "bar near chatelet with pool"
+    options:
+      :types:
+      - 'bar'
+      :radius: 2_000
   - name: "Blackbird siege restaurant sans cafe"
     latitude: 48.8698568
     longitude: 2.3561989

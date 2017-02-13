@@ -7,7 +7,11 @@ YAML.load(File.read('./tests.yml'))['tests'].each do |test|
   print "= #{test['name']} =\n"
   print "===================================\n"
 
-  results = client.spots(test['latitude'], test['longitude'], test['options'])
+  if test['kind'] == 'query'
+    results = client.spots_by_query(test['query'],test['options'])
+  else
+    results = client.spots(test['latitude'], test['longitude'], test['options'])
+  end
 
   print "RESULTS COUNT: #{results.count}"
 
@@ -22,6 +26,7 @@ YAML.load(File.read('./tests.yml'))['tests'].each do |test|
     ].each do |attr|
       print "#{attr}: #{result.public_send(attr)}\n"
     end
+    print "https://maps.google.com/?q=#{result.lat},#{result.lng}\n"
     print "------------------\n"
   end
 
